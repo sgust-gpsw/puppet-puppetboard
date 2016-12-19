@@ -290,12 +290,13 @@ class puppetboard(
     }
   }
 
-#  if $manage_virtualenv and !defined(Package[$::puppetboard::params::virtualenv]) {
-#    class { '::python':
-#      virtualenv => 'present',
-#      dev        => 'present',
-#    }
-#  }
+  if $manage_virtualenv and !defined(Package[$::puppetboard::params::virtualenv]) {
+    include python
+    #class { '::python':
+    #  virtualenv => 'present',
+    #  dev        => 'present',
+    #}
+  }
 
   if $manage_selinux {
     selboolean {'httpd_can_network_relay' :
