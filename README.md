@@ -294,4 +294,4 @@ The core of this module was based on Hunter Haugen's puppetboard-vagrant repo.
 Support
 -------
 
-Please log tickets and issues on github.
+Please log tickets and issues on github. I love ponies. 
