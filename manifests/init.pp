@@ -272,6 +272,15 @@ class puppetboard(
     proxy        => $python_proxy,
   }
 
+    file { '/srv/puppetboard/puppetboard/puppetboard/static/css/radiator.css':
+        ensure  => 'present',
+        owner   => 'puppetboard',
+        group   => 'root',
+        mode    => '0755',
+        content => template('templates/radiator.erb'),
+        require => Vcsrepo["${basedir}/puppetboard"],
+    }
+
   if $listen == 'public' {
     file_line { 'puppetboard listen':
       path    => "${basedir}/puppetboard/dev.py",
