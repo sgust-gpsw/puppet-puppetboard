@@ -277,7 +277,7 @@ class puppetboard(
         owner   => 'puppetboard',
         group   => 'root',
         mode    => '0755',
-        content => template('templates/radiator.erb'),
+        content => template('puppetboard/radiator.erb'),
         require => Vcsrepo["${basedir}/puppetboard"],
     }
 
